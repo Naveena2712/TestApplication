@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="naviModelStoreContainer" CdmEntityContainer="naviEntities1">
+    <EntitySetMapping Name="table3">
+      <EntityTypeMapping TypeName="naviModel.table3">
+        <MappingFragment StoreEntitySet="table3">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="pro1" FunctionName="naviModel.Store.pro1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="naviModel.pro1_Result">
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
