@@ -11,6 +11,8 @@ namespace WebApplication2new.Models
 {
     using System;
     using System.Data.Entity;
+    using System.Data;
+    using System.Data.Entity.Core.Objects;
     using System.Data.Entity.Infrastructure;
     using System.Data.Objects;
     using System.Data.Objects.DataClasses;
@@ -30,11 +32,11 @@ namespace WebApplication2new.Models
     
         public DbSet<table3> table3 { get; set; }
     
-        public virtual ObjectResult<pro1_Result> pro1(string email, string password)
+        public virtual System.Data.Entity.Core.Objects.ObjectResult<pro1_Result> pro1(string email, string password)
         {
             var emailParameter = email != null ?
                 new ObjectParameter("Email", email) :
-                new ObjectParameter("Email", typeof(string));
+                new System.Data.Entity.Core.Objects.ObjectParameter("Email", typeof(string));
     
             var passwordParameter = password != null ?
                 new ObjectParameter("password", password) :

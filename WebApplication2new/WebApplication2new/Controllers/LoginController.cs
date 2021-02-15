@@ -33,19 +33,27 @@ namespace WebApplication2new.Controllers
                         Session["Email"] = obj.Email.ToString();
                         Session["Password"] = obj.Password.ToString();
                         Response.Write("Login success");
-                        return View("newpage1");
+                        return View("GeneralUser");
                     }
                     else
                     {
                         Response.Write("Login Failed");
+                        return View("Admin");
+
                     }
                 }
             }
             return View(objuser);
         }
-       public ActionResult Newpage1()
+        public ActionResult GeneralUser()
         {
             return View();
+                 
+        }
+       public ActionResult Admin()
+        {
+            naviEntities1 nav1 = new naviEntities1();
+            return View(nav1.table3.ToList());
         }
     }
 }
