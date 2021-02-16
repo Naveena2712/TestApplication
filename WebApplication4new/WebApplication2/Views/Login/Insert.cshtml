@@ -1,0 +1,58 @@
+﻿@model WebApplication2.Models.table5
+
+@{
+    Layout = null;
+   
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insert</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Insert", "Login", FormMethod.Post))
+        {
+
+        <table>
+            <tr>
+
+                <td>@Html.LabelFor(model => model.UserName)</td>
+                <td>@Html.EditorFor(model => model.UserName)</td>
+
+
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Email)</td>
+                <td>@Html.EditorFor(model => model.Email)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Role)</td>
+            
+                <td>
+                    @{
+
+                        var listItems = new List<SelectListItem>()
+                {
+                    new SelectListItem {Text = "Admin",   Value = "Admin"},
+                    new SelectListItem {Text = "GeneralUser", Value = "GeneralUser"}
+                };
+
+                @Html.DropDownListFor(m => m.Role, listItems, string.Empty)
+                    }
+
+                </td>
+            
+            </tr>
+            <tr>
+                <td><input type="submit" value="Insert" name="Insert" /></td>
+                <td><input type="reset" value="Clear" /></td>
+            </tr>
+        </table>
+        }
+    </div>
+</body>
+</html>

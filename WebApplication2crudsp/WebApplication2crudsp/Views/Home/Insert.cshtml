@@ -1,0 +1,48 @@
+﻿@model WebApplication2crudsp.Models.tableone
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insert</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            
+        <table>
+            <tr>
+                <td>@Html.LabelFor(model => model.Name)</td>
+                <td>@Html.EditorFor(Model => Model.Name)</td>
+            </tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.Email)</td>
+                <td>@Html.EditorFor(Model => Model.Email)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Password)</td>
+                <td>@Html.EditorFor(Model => Model.Password)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Age)</td>
+                <td>@Html.EditorFor(Model => Model.Age)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="Insert" value="Insert" /></td>
+                <td><input type="button" name="Clear"  value="Clear"/></td>
+            </tr>
+        </table>
+
+
+
+        }
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebApplication2crudsp.Models.procedureselect_Result>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   
+        <div>
+            <table>
+                <tr>
+                    <td>Id</td>
+                      <td>Name</td> 
+                    <td>Email</td>
+                    <td>Password</td>
+                    <td>Age</td></tr>
+                    @foreach (var item in Model)
+                    {
+                <tr>
+                    <td>@Html.DisplayFor(a => item.Id)</td>
+
+                    <td>@Html.DisplayFor(a => item.Name)</td>
+
+                    <td>@Html.DisplayFor(a => item.Email)</td>
+                    
+                    <td>@Html.DisplayFor(a => item.Password)</td>
+                    
+                    <td>@Html.DisplayFor(a => item.Age)</td>
+   <td>@Html.ActionLink("Edit", "Edit", new { Id = item.Id }) ||@Html.ActionLink("Delete", "Delete", new { Id = item.Id })</td>
+                    
+                </tr>
+                    }
+            </table>
+
+        </div>
+    
+</body>
+</html>

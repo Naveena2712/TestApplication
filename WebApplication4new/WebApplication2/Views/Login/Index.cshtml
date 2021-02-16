@@ -1,0 +1,41 @@
+﻿@model  WebApplication2.Models.table3
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <div id="login-div">
+        @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <table>
+                <tr>
+
+                    <td>@Html.LabelFor(model => model.Email)</td>
+                    <td>@Html.EditorFor(Model => Model.Email)</td>
+                    
+                    <td>@Html.ValidationMessageFor(Model => Model.Email)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.Password)</td>
+                    <td>@Html.EditorFor(Model => Model.Password)</td>
+                </tr>
+
+                <tr>
+                    <td><input type="submit" value="Login" /></td>
+                    <td><input type="reset" value="Clear" /></td>
+                </tr>
+            </table>
+        }
+    </div>
+</body>
+</html>

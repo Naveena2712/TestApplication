@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+    WebGrid grid = new WebGrid(source: Model);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin</title>
+</head>
+<body>
+    <div>
+        @grid.GetHtml(
+       htmlAttributes: new { @id = "WebGrid", @class = "Grid" },
+       columns: grid.Columns(
+               grid.Column("NO", "No"),
+                grid.Column("Name", "Name"),
+               grid.Column("Password", "Password"),
+               grid.Column("Email", "Email")))
+    </div>
+</body>
+</html>

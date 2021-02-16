@@ -1,0 +1,30 @@
+﻿@model WebApplication2crudsp.Models.procedurefind_Result
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+
+            <table>
+                <tr><td>Id</td><td>@Html.TextBoxFor(a => a.Id)</td></tr>
+                <tr><td>Name</td><td>@Html.TextBoxFor(a => a.Name)</td></tr>
+                <tr><td>Email</td><td>@Html.TextBoxFor(a => a.Email)</td></tr>
+                <tr><td>Password</td><td>@Html.TextBoxFor(a => a.Password)</td></tr>
+                <tr><td>Age</td><td>@Html.TextBoxFor(a => a.Age)</td></tr>
+
+                <tr><td><input type="submit" name="submit" value="Update" /></td></tr>
+            </table>
+        }
+        </div>
+</body>
+</html>
